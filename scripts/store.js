@@ -1,4 +1,3 @@
-let foo = 'bar';
 let items = [];
 let hideCheckedItems = false;
 
