@@ -7,7 +7,7 @@ function validateName(name){
 function createName(name){
   return {
     id: cuid(),
-    name: name,   
+    name: name,
     checked: false
   };
 }

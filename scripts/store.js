@@ -4,8 +4,8 @@ const items = [];
 const hideCheckedItems = false;
 
 function findById(id){
-  return items.find(function(bob){
-    bob.id == id;
+  return items.find(function(foundItem){
+    return foundItem.id == id;
   })
 }
 
@@ -13,18 +13,21 @@ function addItem(name){
   try {
     item.validateName(name);
     let thisItem=item.createName(name);
-    this.items.push(thisItem);
+    items.push(thisItem);
   } catch(error){
     console.log(error.message);
   }
 }
 
 function findAndToggleChecked(id){
-  if (this.findById(id).checked == true){
-    this.findById(id).checked = false
-  } else {
-    this.findById(id).checked = true
-  }
+  let check = this.findById(id)
+  check.checked = !check.checked;
+
+  // if (this.findById(id).checked == true){
+  //   this.findById(id).checked = false
+  // } else {
+  //   this.findById(id).checked = true
+  // }
 }
 
 function findAndUpdateName(id, newName){
@@ -38,12 +41,11 @@ function findAndUpdateName(id, newName){
 }
 
 function findAndDelete(id){
-  let deleteItem = this.findById(id);
-  this.items.filter(function(newArray){
-    newArray != deleteItem
-  })
+  //let deleteItem = this.findById(id);
+  let deleteIndex = items.findIndex(item => item.id == id);
+  // let deleteIndex = items.map(item => item.id).indexOf(id);
+  items.splice(deleteIndex, 1)
 }
-
 
 
 export default {

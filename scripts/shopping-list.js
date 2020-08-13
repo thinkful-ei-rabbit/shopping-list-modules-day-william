@@ -45,7 +45,7 @@ const render = function () {
 const addItemToShoppingList = function (itemName) {
   try {
     item.validateName(itemName);
-    let newItem = item.create(itemName);
+    let newItem = item.createName(itemName);
     store.items.push(newItem);
     render();
   } catch (error) {
