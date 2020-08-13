@@ -5,9 +5,11 @@ function validateName(name){
 }
 
 function create(name){
-  this.id=cuid();
-  this.name=name;
-  this.checked=false;
+  return {
+    id: cuid(),
+    name: name,   
+    checked: false
+  };
 }
 
 export default {
