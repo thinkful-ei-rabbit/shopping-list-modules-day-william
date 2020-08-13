@@ -4,7 +4,7 @@ function validateName(name){
   }
 }
 
-function create(name){
+function createName(name){
   return {
     id: cuid(),
     name: name,   
@@ -14,5 +14,5 @@ function create(name){
 
 export default {
   validateName,
-  create,
+  createName,
 };
