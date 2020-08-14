@@ -44,9 +44,11 @@ function findAndDelete(id){
   //let deleteItem = this.findById(id);
   let deleteIndex = items.findIndex(item => item.id == id);
   // let deleteIndex = items.map(item => item.id).indexOf(id);
-  items.splice(deleteIndex, 1)
+  items.splice(deleteIndex, 1);
 }
-
+function toggleCheckedFilter(){
+  this.hideCheckedItems = !this.hideCheckedItems;
+}
 
 export default {
   items,
@@ -55,7 +57,8 @@ export default {
   addItem,
   findAndToggleChecked,
   findAndUpdateName,
-  findAndDelete
+  findAndDelete,
+  toggleCheckedFilter,
 };
 
 
